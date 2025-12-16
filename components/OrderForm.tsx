@@ -1,4 +1,4 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -258,7 +258,7 @@ export default function OrderForm({
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         ref={modalRef}
-        className='bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl max-w-full w-full md:max-w-4xl h-[90vh] sm:h-auto my-4! overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col'
+        className='bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl max-w-full w-full md:max-w-4xl max-h-[90vh] sm:max-h-[95vh] my-4! overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col'
       >
         {/* Header */}
         <div className='sticky top-0 bg-linear-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-800 px-4! sm:px-6! md:px-8! py-4! sm:py-5! md:py-6! rounded-t-xl sm:rounded-t-2xl md:rounded-t-3xl flex justify-between items-center z-10 shrink-0'>
@@ -430,7 +430,7 @@ export default function OrderForm({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.2 }}
-              className='h-full'
+              className='h-full overflow-y-auto'
             >
               {/* Step 1: Customer Information */}
               {activeStep === 1 && (
@@ -761,6 +761,8 @@ export default function OrderForm({
                         <option value='Professional Couriers'>
                           Professional Couriers
                         </option>
+                        <option value='APSRTC'>APSRTC</option>
+
                         <option value='DTDC'>DTDC</option>
                         <option value='Delhivery'>Delhivery</option>
                         <option value='India Post'>India Post</option>
@@ -957,3 +959,4 @@ export default function OrderForm({
     </div>
   );
 }
+
