@@ -58,7 +58,11 @@ export default function Dashboard() {
     setOrders([]);
     setFilteredOrders([]);
   };
-
+  // In your Dashboard component, replace the existing handleEdit function or create this new one:
+  const handleEdit = (order: Order) => {
+    setSelectedOrder(order); // 1. Set the order to edit
+    setShowForm(true); // 2. Show the form modal
+  };
   // Data fetching
   const fetchOrders = async () => {
     try {
@@ -440,7 +444,7 @@ export default function Dashboard() {
               <OrderCard
                 key={order.id}
                 order={order}
-                onEdit={setSelectedOrder}
+                onEdit={handleEdit}
                 onDelete={setDeleteConfirm}
                 onStatusUpdate={handleQuickStatusUpdate}
                 deleteConfirm={deleteConfirm}
@@ -479,4 +483,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
